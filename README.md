@@ -12,7 +12,7 @@
 
 # Prerequisites
 
-* Visual Studio 2017 (Optional, for Windows)
+* Visual Studio 2019
 * .NET Core SDK 3.1
 * NodeJS 12.x+
 
