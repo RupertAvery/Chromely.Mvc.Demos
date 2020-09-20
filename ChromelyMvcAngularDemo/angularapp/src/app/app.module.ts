@@ -7,7 +7,7 @@ import { AppComponent } from './app.component';
 import { AppRoutedComponents, AppRoutes } from './app-routes';
 import { DemoComponent } from './demo/demo.component';
 import { HttpService } from './services/http.service';
-import { RegisteredJsObjectService } from './services/registered-js-object.service';
+import { ChromelyService } from './services/chromely.service';
 
 @NgModule({
   declarations: [
@@ -21,8 +21,9 @@ import { RegisteredJsObjectService } from './services/registered-js-object.servi
     RouterModule.forRoot(AppRoutes)
   ],
   providers: [
-        RegisteredJsObjectService,
-        HttpService],
+    ChromelyService,
+    HttpService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

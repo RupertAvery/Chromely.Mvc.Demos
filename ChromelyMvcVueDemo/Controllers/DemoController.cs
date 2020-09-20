@@ -1,24 +1,24 @@
-﻿namespace ChromelyVueCefSharp.Controllers
-{
-    using System.Collections.Generic;
-    using System.Linq;
-    using Chromely.Mvc;
-    using Chromely.Mvc.Attributes;
-    using Services;
+﻿using System.Collections.Generic;
+using System.Linq;
+using Chromely.Mvc;
+using Chromely.Mvc.Attributes;
+using ChromelyMvcVueDemo.Services;
 
+namespace ChromelyMvcVueDemo.Controllers
+{
     public class DemoController : Controller
     {
-        private readonly IMovieService movieService;
+        private readonly IMovieService _movieService;
 
         public DemoController(IMovieService movieService)
         {
-            this.movieService = movieService;
+            _movieService = movieService;
         }
 
         [HttpGet]
         public IEnumerable<MovieInfo> GetMovies()
         {
-            return movieService.GetMovies();
+            return _movieService.GetMovies();
         }
 
         [HttpPost]

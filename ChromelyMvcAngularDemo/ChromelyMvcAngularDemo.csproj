@@ -2,14 +2,14 @@
   <PropertyGroup>
     
     <OutputType>WinExe</OutputType>
-    <TargetFramework>net461</TargetFramework>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
     <TypeScriptCompileBlocked>true</TypeScriptCompileBlocked>
     <TypeScriptToolsVersion>Latest</TypeScriptToolsVersion>
     <IsPackable>false</IsPackable>
     <Platforms>x64</Platforms>
     <RunPostBuildEvent>OnBuildSuccess</RunPostBuildEvent>
     <ApplicationIcon>chromely.ico</ApplicationIcon>
-    <StartupObject />
+    <StartupObject>ChromelyMvcAngularDemo.Program</StartupObject>
     <AssemblyName>chromely_angular_cefsharp</AssemblyName>
     
   </PropertyGroup>
@@ -27,17 +27,18 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="CefSharp.Common" Version="71.0.2" />
-    <PackageReference Include="Chromely.CefSharp.WinApi" Version="4.0.71" />
-    <PackageReference Include="Chromely.Core" Version="4.0.0" />
-    <PackageReference Include="Chromely.Mvc" Version="4.0.0.1" />
-    <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="2.2.0" />
+    <PackageReference Include="Chromely.Core" Version="5.0.0.6" />
+    <PackageReference Include="Chromely.Mvc" Version="5.0.0.6" />
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="3.1.8" />
     <PackageReference Include="Newtonsoft.Json" Version="12.0.2" />
   </ItemGroup>
   
   <ItemGroup>
     <None Update="chromely.ico">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="chromelyconfig.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Update="content\img\chromely.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>

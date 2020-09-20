@@ -21,7 +21,7 @@
         <router-link to="/"> <button id="buttonDemoRun" type="button" class="btn btn-link" style='margin: 5px;'>Back</button></router-link>
       </div>
       <div class="centerBlock">
-        <button v-b-modal.boundJsObjectModal type="button" class="btn btn-light" style='margin: 5px;'>RegisterAsyncJsObject Demo</button>
+          <button v-b-modal.boundJsObjectModal type="button" class="btn btn-light" style='margin: 5px;'>window.cefQuery Demo</button>
         <a href="https://github.com/mattkol/Chromely" class="btn btn-default" role="button" style='margin: 5px;'>more info</a>
       </div>
     </div>
@@ -51,7 +51,7 @@
     </div>
 
     <!-- Bounds Object Modal -->
-    <b-modal id="boundJsObjectModal" size="lg" title=".NET/JavaScript Integration (RegisterAsyncJsObject) Demo">
+    <b-modal id="boundJsObjectModal" size="lg" title=".NET/JavaScript Integration (window.cefQuery) Demo">
         <b-tabs pills>
             <b-tab title="Get1" active>
               <div class="row">

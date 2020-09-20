@@ -1,32 +1,90 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.28307.572
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30503.244
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ChromelyMvcVueDemo", "ChromelyMvcVueDemo\ChromelyMvcVueDemo.csproj", "{A89DA9AB-D47A-41CF-BB8F-86776B85E32F}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ChromelyMvcAngularDemo", "ChromelyMvcAngularDemo\ChromelyMvcAngularDemo.csproj", "{49DC1571-A9AD-4920-A16E-CBC44DEE3895}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ChromelyMvcReactDemo", "ChromelyMvcReactDemo\ChromelyMvcReactDemo.csproj", "{C2954577-6FD8-463A-81A2-DAE147E01121}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Debug|x64 = Debug|x64
+		Debug|x86 = Debug|x86
+		DebugLinux|Any CPU = DebugLinux|Any CPU
+		DebugLinux|x64 = DebugLinux|x64
+		DebugLinux|x86 = DebugLinux|x86
 		Release|Any CPU = Release|Any CPU
 		Release|x64 = Release|x64
+		Release|x86 = Release|x86
+		ReleaseLinux|Any CPU = ReleaseLinux|Any CPU
+		ReleaseLinux|x64 = ReleaseLinux|x64
+		ReleaseLinux|x86 = ReleaseLinux|x86
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{A89DA9AB-D47A-41CF-BB8F-86776B85E32F}.Debug|Any CPU.ActiveCfg = Debug|x64
 		{A89DA9AB-D47A-41CF-BB8F-86776B85E32F}.Debug|x64.ActiveCfg = Debug|x64
 		{A89DA9AB-D47A-41CF-BB8F-86776B85E32F}.Debug|x64.Build.0 = Debug|x64
+		{A89DA9AB-D47A-41CF-BB8F-86776B85E32F}.Debug|x86.ActiveCfg = Debug|x64
+		{A89DA9AB-D47A-41CF-BB8F-86776B85E32F}.DebugLinux|Any CPU.ActiveCfg = Release|x64
+		{A89DA9AB-D47A-41CF-BB8F-86776B85E32F}.DebugLinux|Any CPU.Build.0 = Release|x64
+		{A89DA9AB-D47A-41CF-BB8F-86776B85E32F}.DebugLinux|x64.ActiveCfg = Debug|x64
+		{A89DA9AB-D47A-41CF-BB8F-86776B85E32F}.DebugLinux|x64.Build.0 = Debug|x64
+		{A89DA9AB-D47A-41CF-BB8F-86776B85E32F}.DebugLinux|x86.ActiveCfg = Release|x64
+		{A89DA9AB-D47A-41CF-BB8F-86776B85E32F}.DebugLinux|x86.Build.0 = Release|x64
 		{A89DA9AB-D47A-41CF-BB8F-86776B85E32F}.Release|Any CPU.ActiveCfg = Release|x64
 		{A89DA9AB-D47A-41CF-BB8F-86776B85E32F}.Release|x64.ActiveCfg = Release|x64
 		{A89DA9AB-D47A-41CF-BB8F-86776B85E32F}.Release|x64.Build.0 = Release|x64
+		{A89DA9AB-D47A-41CF-BB8F-86776B85E32F}.Release|x86.ActiveCfg = Release|x64
+		{A89DA9AB-D47A-41CF-BB8F-86776B85E32F}.ReleaseLinux|Any CPU.ActiveCfg = Release|x64
+		{A89DA9AB-D47A-41CF-BB8F-86776B85E32F}.ReleaseLinux|Any CPU.Build.0 = Release|x64
+		{A89DA9AB-D47A-41CF-BB8F-86776B85E32F}.ReleaseLinux|x64.ActiveCfg = Release|x64
+		{A89DA9AB-D47A-41CF-BB8F-86776B85E32F}.ReleaseLinux|x64.Build.0 = Release|x64
+		{A89DA9AB-D47A-41CF-BB8F-86776B85E32F}.ReleaseLinux|x86.ActiveCfg = Release|x64
+		{A89DA9AB-D47A-41CF-BB8F-86776B85E32F}.ReleaseLinux|x86.Build.0 = Release|x64
 		{49DC1571-A9AD-4920-A16E-CBC44DEE3895}.Debug|Any CPU.ActiveCfg = Debug|x64
 		{49DC1571-A9AD-4920-A16E-CBC44DEE3895}.Debug|x64.ActiveCfg = Debug|x64
 		{49DC1571-A9AD-4920-A16E-CBC44DEE3895}.Debug|x64.Build.0 = Debug|x64
+		{49DC1571-A9AD-4920-A16E-CBC44DEE3895}.Debug|x86.ActiveCfg = Debug|x64
+		{49DC1571-A9AD-4920-A16E-CBC44DEE3895}.DebugLinux|Any CPU.ActiveCfg = Release|x64
+		{49DC1571-A9AD-4920-A16E-CBC44DEE3895}.DebugLinux|Any CPU.Build.0 = Release|x64
+		{49DC1571-A9AD-4920-A16E-CBC44DEE3895}.DebugLinux|x64.ActiveCfg = Debug|x64
+		{49DC1571-A9AD-4920-A16E-CBC44DEE3895}.DebugLinux|x64.Build.0 = Debug|x64
+		{49DC1571-A9AD-4920-A16E-CBC44DEE3895}.DebugLinux|x86.ActiveCfg = Release|x64
+		{49DC1571-A9AD-4920-A16E-CBC44DEE3895}.DebugLinux|x86.Build.0 = Release|x64
 		{49DC1571-A9AD-4920-A16E-CBC44DEE3895}.Release|Any CPU.ActiveCfg = Release|x64
 		{49DC1571-A9AD-4920-A16E-CBC44DEE3895}.Release|x64.ActiveCfg = Release|x64
 		{49DC1571-A9AD-4920-A16E-CBC44DEE3895}.Release|x64.Build.0 = Release|x64
+		{49DC1571-A9AD-4920-A16E-CBC44DEE3895}.Release|x86.ActiveCfg = Release|x64
+		{49DC1571-A9AD-4920-A16E-CBC44DEE3895}.ReleaseLinux|Any CPU.ActiveCfg = Release|x64
+		{49DC1571-A9AD-4920-A16E-CBC44DEE3895}.ReleaseLinux|Any CPU.Build.0 = Release|x64
+		{49DC1571-A9AD-4920-A16E-CBC44DEE3895}.ReleaseLinux|x64.ActiveCfg = Release|x64
+		{49DC1571-A9AD-4920-A16E-CBC44DEE3895}.ReleaseLinux|x64.Build.0 = Release|x64
+		{49DC1571-A9AD-4920-A16E-CBC44DEE3895}.ReleaseLinux|x86.ActiveCfg = Release|x64
+		{49DC1571-A9AD-4920-A16E-CBC44DEE3895}.ReleaseLinux|x86.Build.0 = Release|x64
+		{C2954577-6FD8-463A-81A2-DAE147E01121}.Debug|Any CPU.ActiveCfg = Debug|x64
+		{C2954577-6FD8-463A-81A2-DAE147E01121}.Debug|x64.ActiveCfg = Debug|x64
+		{C2954577-6FD8-463A-81A2-DAE147E01121}.Debug|x64.Build.0 = Debug|x64
+		{C2954577-6FD8-463A-81A2-DAE147E01121}.Debug|x86.ActiveCfg = Debug|x64
+		{C2954577-6FD8-463A-81A2-DAE147E01121}.DebugLinux|Any CPU.ActiveCfg = Debug|x64
+		{C2954577-6FD8-463A-81A2-DAE147E01121}.DebugLinux|Any CPU.Build.0 = Debug|x64
+		{C2954577-6FD8-463A-81A2-DAE147E01121}.DebugLinux|x64.ActiveCfg = Debug|x64
+		{C2954577-6FD8-463A-81A2-DAE147E01121}.DebugLinux|x64.Build.0 = Debug|x64
+		{C2954577-6FD8-463A-81A2-DAE147E01121}.DebugLinux|x86.ActiveCfg = Debug|x64
+		{C2954577-6FD8-463A-81A2-DAE147E01121}.DebugLinux|x86.Build.0 = Debug|x64
+		{C2954577-6FD8-463A-81A2-DAE147E01121}.Release|Any CPU.ActiveCfg = Release|x64
+		{C2954577-6FD8-463A-81A2-DAE147E01121}.Release|x64.ActiveCfg = Release|x64
+		{C2954577-6FD8-463A-81A2-DAE147E01121}.Release|x64.Build.0 = Release|x64
+		{C2954577-6FD8-463A-81A2-DAE147E01121}.Release|x86.ActiveCfg = Release|x64
+		{C2954577-6FD8-463A-81A2-DAE147E01121}.ReleaseLinux|Any CPU.ActiveCfg = Debug|x64
+		{C2954577-6FD8-463A-81A2-DAE147E01121}.ReleaseLinux|Any CPU.Build.0 = Debug|x64
+		{C2954577-6FD8-463A-81A2-DAE147E01121}.ReleaseLinux|x64.ActiveCfg = Release|x64
+		{C2954577-6FD8-463A-81A2-DAE147E01121}.ReleaseLinux|x64.Build.0 = Release|x64
+		{C2954577-6FD8-463A-81A2-DAE147E01121}.ReleaseLinux|x86.ActiveCfg = Debug|x64
+		{C2954577-6FD8-463A-81A2-DAE147E01121}.ReleaseLinux|x86.Build.0 = Debug|x64
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

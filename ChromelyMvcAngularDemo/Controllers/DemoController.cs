@@ -1,11 +1,11 @@
-﻿namespace ChromelyAngularCefSharp.Controllers
-{
-    using System.Collections.Generic;
-    using System.Linq;
-    using Chromely.Mvc;
-    using Chromely.Mvc.Attributes;
-    using Services;
+﻿using System.Collections.Generic;
+using System.Linq;
+using Chromely.Mvc;
+using Chromely.Mvc.Attributes;
+using ChromelyMvcAngularDemo.Services;
 
+namespace ChromelyMvcAngularDemo.Controllers
+{
     public class DemoController : Controller
     {
         private readonly IMovieService movieService;

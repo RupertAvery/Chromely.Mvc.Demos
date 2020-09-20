@@ -1,4 +1,4 @@
-﻿namespace ChromelyAngularCefSharp.Services
+﻿namespace ChromelyMvcAngularDemo.Services
 {
     public interface IInfoService
     {

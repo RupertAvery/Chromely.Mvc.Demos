@@ -3,7 +3,7 @@ import { Location } from '@angular/common';
 import { IInfo } from '../services/info';
 import { IMovie } from '../services/movie';
 import { HttpService } from '../services/http.service';
-import { RegisteredJsObjectService } from '../services/registered-js-object.service';
+import { ChromelyService } from '../services/chromely.service';
 
 @Component({
   selector: 'app-demo',
@@ -23,7 +23,7 @@ export class DemoComponent implements OnInit {
 
   postData: any;
 
-  constructor(private _registeredJsObjectService: RegisteredJsObjectService,
+  constructor(private _chromelyService: ChromelyService,
     private _httpService: HttpService,
     private _zone: NgZone,
     private _location: Location) {
@@ -44,7 +44,7 @@ export class DemoComponent implements OnInit {
   }
 
   getInfo() {
-    this._registeredJsObjectService.get<IInfo>('/info', null).subscribe(data => {
+    this._chromelyService.get<IInfo>('/info', null).subscribe(data => {
       this._zone.run(
         () => {
           this.info = data;
@@ -53,7 +53,7 @@ export class DemoComponent implements OnInit {
   }
 
   getMovies() {
-    this._registeredJsObjectService.get<IMovie[]>('/demo/getmovies', null).subscribe(data => {
+    this._chromelyService.get<IMovie[]>('/demo/getmovies', null).subscribe(data => {
       this._zone.run(
         () => {
           this.movies = data;
@@ -63,7 +63,7 @@ export class DemoComponent implements OnInit {
 
 
   saveMovies() {
-    this._registeredJsObjectService.post<string>('/demo/savemovies', null, this.postData).subscribe(data => {
+    this._chromelyService.post<string>('/demo/savemovies', null, this.postData).subscribe(data => {
       this._zone.run(
         () => {
           this.postResult = data;

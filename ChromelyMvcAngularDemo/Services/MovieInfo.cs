@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace ChromelyAngularCefSharp.Services
+namespace ChromelyMvcAngularDemo.Services
 {
 
     public class MovieInfo

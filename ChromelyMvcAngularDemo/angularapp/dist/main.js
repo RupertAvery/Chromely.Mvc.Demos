@@ -126,7 +126,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _app_routes__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./app-routes */ "./src/app/app-routes.ts");
 /* harmony import */ var _demo_demo_component__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./demo/demo.component */ "./src/app/demo/demo.component.ts");
 /* harmony import */ var _services_http_service__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./services/http.service */ "./src/app/services/http.service.ts");
-/* harmony import */ var _services_registered_js_object_service__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./services/registered-js-object.service */ "./src/app/services/registered-js-object.service.ts");
+/* harmony import */ var _services_chromely_service__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./services/chromely.service */ "./src/app/services/chromely.service.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -158,7 +158,7 @@ var AppModule = /** @class */ (function () {
                 _angular_router__WEBPACK_IMPORTED_MODULE_3__["RouterModule"].forRoot(_app_routes__WEBPACK_IMPORTED_MODULE_5__["AppRoutes"])
             ],
             providers: [
-                _services_registered_js_object_service__WEBPACK_IMPORTED_MODULE_8__["RegisteredJsObjectService"],
+                _services_chromely_service__WEBPACK_IMPORTED_MODULE_8__["ChromelyService"],
                 _services_http_service__WEBPACK_IMPORTED_MODULE_7__["HttpService"]
             ],
             bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_4__["AppComponent"]]
@@ -189,7 +189,7 @@ module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div>\n  <div class=\"col-12\">\n    <div class=\"centerBlock\">\n      <span class=\"text-primary text-center\"><h2>demo panel</h2></span>\n      <p class=\"text-muted text-center\">demo of chromely angular 2+ integration</p>\n    </div>\n  </div>\n\n  <div class=\"col-12\">\n    <div>\n      <button type=\"button\" class=\"btn btn-link\" (click)=\"goBack()\">Back</button>\n    </div>\n    <div class=\"centerBlock\">\n      <button type=\"button\" class=\"btn btn-light\" data-toggle=\"modal\" data-target=\"#boundJsObjectModal\" style='margin: 5px;'>RegisterAsyncJsObject Demo</button>\n      <button type=\"button\" class=\"btn btn-light\" data-toggle=\"modal\" data-target=\"#httpModal\" style='margin: 5px;'>Http Demo</button>\n      <a href=\"https://github.com/mattkol/Chromely\" class=\"btn btn-default\" role=\"button\" style='margin: 5px;'>more info</a>\n    </div>\n  </div>\n\n  <br>\n\n  <div id=\"infoPanel\" class=\"col-12 centerBlock\">\n\n    <div>\n      <div class=\"card-header card bg-primary text-white\">Chromely Main objective</div>\n      <div class=\"card-body\"> {{ info.Objective }} </div>\n    </div>\n    <br>\n\n    <div>\n      <div class=\"card-header card bg-primary text-white\">Platforms</div>\n      <div class=\"card-body\"> {{ info.Platform }}</div>\n    </div>\n    <br>\n\n    <div>\n      <div class=\"card-header card bg-primary text-white\">Current CefSharp/Chromium Version</div>\n      <div class=\"card-body\">{{ info.Version }}</div>\n    </div>\n    <br>\n\n  </div>\n\n  <!-- The Modal RegisterAsyncJsObject Modal -->\n  <div class=\"modal fade\" id=\"boundJsObjectModal\">\n    <div class=\"modal-dialog modal-lg\">\n      <div class=\"modal-content\">\n\n        <!-- Modal Header -->\n        <div class=\"modal-header\">\n          <h4 class=\"modal-title\">.NET/JavaScript Integration Demo (RegisterAsyncJsObject)</h4>\n          <button type=\"button\" class=\"close\" data-dismiss=\"modal\">&times;</button>\n        </div>\n\n        <!-- Modal body -->\n        <div class=\"modal-body\">\n          <!-- Nav pills -->\n          <ul class=\"nav nav-pills\" role=\"tablist\">\n            <li class=\"nav-item\">\n              <a class=\"nav-link active\" data-toggle=\"pill\" href=\"#sectionA\">Get 1</a>\n            </li>\n            <li class=\"nav-item\">\n              <a class=\"nav-link\" data-toggle=\"pill\" href=\"#sectionB\">Get 2</a>\n            </li>\n            <li class=\"nav-item\">\n              <a class=\"nav-link\" data-toggle=\"pill\" href=\"#sectionC\">Post</a>\n            </li>\n          </ul>\n\n          <!-- Tab panes -->\n          <div class=\"tab-content\">\n            <div id=\"sectionA\" class=\"container tab-pane active\">\n              <br>\n              <div class=\"row\">\n                <div class=\"col-12\">\n                  Route Path:&ensp;/demo/movies &ensp; (Restful Service in Local Assembly)&ensp;<button type=\"button\" class=\"btn btn-primary btn-sm\" (click)=\"getMovies()\">Run</button>\n                </div>\n                <br><br>\n                <div class=\"col-12\">\n                  <div class='table-responsive'>\n                    <table class='table'>\n                      <thead>\n                        <tr>\n                          <th>Id</th>\n                          <th>Title</th>\n                          <th>Year</th>\n                          <th>Votes</th>\n                          <th>Rating</th>\n                          <th>Date</th>\n                          <th>RestfulAssembly</th>\n                        </tr>\n                      </thead>\n                      <tbody>\n                        <tr *ngFor='let movie of movies'>\n                          <td>{{ movie.Id }}</td>\n                          <td>{{ movie.Title }}</td>\n                          <td>{{ movie.Year }}</td>\n                          <td>{{ movie.Votes }}</td>\n                          <td>{{ movie.Rating }}</td>\n                          <td>{{ movie.Date }}</td>\n                          <td>{{ movie.RestfulAssembly }}</td>\n                        </tr>\n                      </tbody>\n                    </table>\n                  </div>\n                </div>\n              </div>\n            </div>\n            <div id=\"sectionB\" class=\"container tab-pane fade\">\n              <br>\n              <div class=\"row\">\n                <div class=\"col-12\">\n                  Route Path:&ensp;/external/movies &ensp;(Restful Service in External Assembly)&ensp;<button type=\"button\" class=\"btn btn-primary btn-sm\" (click)=\"getExternalMovies()\">Run</button>\n                </div>\n                <br><br>\n                <div class=\"col-12\">\n                  <div class='table-responsive'>\n                    <table class='table'>\n                      <thead>\n                        <tr>\n                          <th>Id</th>\n                          <th>Title</th>\n                          <th>Year</th>\n                          <th>Votes</th>\n                          <th>Rating</th>\n                          <th>Date</th>\n                          <th>RestfulAssembly</th>\n                        </tr>\n                      </thead>\n                      <tbody>\n                        <tr *ngFor='let movie of externalMovies'>\n                          <td>{{ movie.Id }}</td>\n                          <td>{{ movie.Title }}</td>\n                          <td>{{ movie.Year }}</td>\n                          <td>{{ movie.Votes }}</td>\n                          <td>{{ movie.Rating }}</td>\n                          <td>{{ movie.Date }}</td>\n                          <td>{{ movie.RestfulAssembly }}</td>\n                        </tr>\n                      </tbody>\n                    </table>\n                  </div>\n                </div>\n              </div>\n            </div>\n            <div id=\"sectionC\" class=\"container tab-pane fade\">\n              <br>\n              <div class=\"row\">\n                <div class=\"col-12\">\n                  Route Path:&ensp;/demo/savemovies&ensp;(Restful Service in Local Assembly)&ensp;<button type=\"button\" class=\"btn btn-primary btn-sm\" (click)=\"saveMovies()\">Run</button>\n                </div>\n                <br><br>\n                <div class=\"col-12\">\n                  <div>{{ postResult }}</div>\n                </div>\n              </div>\n            </div>\n          </div>\n        </div>\n\n        <!-- Modal footer -->\n        <div class=\"modal-footer\">\n          <button type=\"button\" class=\"btn btn-primary\" data-dismiss=\"modal\">Close</button>\n        </div>\n\n      </div>\n    </div>\n  </div>\n\n  <!-- The Modal Http Requests -->\n  <div class=\"modal fade\" id=\"httpModal\">\n    <div class=\"modal-dialog modal-lg\">\n      <div class=\"modal-content\">\n\n        <!-- Modal Header -->\n        <div class=\"modal-header\">\n          <h4 class=\"modal-title\">Http Requests</h4>\n          <button type=\"button\" class=\"close\" data-dismiss=\"modal\">&times;</button>\n        </div>\n\n        <!-- Modal body -->\n        <div class=\"modal-body\">\n          <!-- Nav pills -->\n          <ul class=\"nav nav-pills\" role=\"tablist\">\n            <li class=\"nav-item\">\n              <a class=\"nav-link active\" data-toggle=\"pill\" href=\"#sectionI\">Get 1</a>\n            </li>\n            <li class=\"nav-item\">\n              <a class=\"nav-link\" data-toggle=\"pill\" href=\"#sectionJ\">Get 2</a>\n            </li>\n            <li class=\"nav-item\">\n              <a class=\"nav-link\" data-toggle=\"pill\" href=\"#sectionK\">Post</a>\n            </li>\n          </ul>\n\n          <!-- Tab panes -->\n          <div class=\"tab-content\">\n            <div id=\"sectionI\" class=\"container tab-pane active\">\n              <br>\n              <div class=\"row\">\n                <div class=\"col-12\">\n                  Route Path:&ensp;/democontroller/movies &ensp; (Restful Service in Local Assembly&ensp;<button type=\"button\" class=\"btn btn-primary btn-sm\" (click)=\"httpRequest('getlocal', 'http://chromely.com/democontroller/movies')\">Run</button>\n                </div>\n                <br><br>\n                <div class=\"col-12\">\n                  <div class='table-responsive'>\n                    <table class='table'>\n                      <thead>\n                        <tr>\n                          <th>Id</th>\n                          <th>Title</th>\n                          <th>Year</th>\n                          <th>Votes</th>\n                          <th>Rating</th>\n                          <th>Date</th>\n                          <th>RestfulAssembly</th>\n                        </tr>\n                      </thead>\n                      <tbody>\n                        <tr *ngFor='let movie of httpMovies'>\n                          <td>{{ movie.Id }}</td>\n                          <td>{{ movie.Title }}</td>\n                          <td>{{ movie.Year }}</td>\n                          <td>{{ movie.Votes }}</td>\n                          <td>{{ movie.Rating }}</td>\n                          <td>{{ movie.Date }}</td>\n                          <td>{{ movie.RestfulAssembly }}</td>\n                        </tr>\n                      </tbody>\n                    </table>\n                  </div>\n                </div>\n              </div>\n            </div>\n            <div id=\"sectionJ\" class=\"container tab-pane fade\">\n              <br>\n              <div class=\"row\">\n                <div class=\"col-12\">\n                  Route Path:&ensp;/externalcontroller/movies &ensp; (Restful Service in External Assembly)&ensp;<button type=\"button\" class=\"btn btn-primary btn-sm\" (click)=\"httpRequest('getexternal', 'http://chromely.com/externalcontroller/movies')\">Run</button>\n                </div>\n                <br><br>\n                <div class=\"col-12\">\n                  <div class='table-responsive'>\n                    <table class='table'>\n                      <thead>\n                        <tr>\n                          <th>Id</th>\n                          <th>Title</th>\n                          <th>Year</th>\n                          <th>Votes</th>\n                          <th>Rating</th>\n                          <th>Date</th>\n                          <th>RestfulAssembly</th>\n                        </tr>\n                      </thead>\n                      <tbody>\n                        <tr *ngFor='let movie of httpExternalMovies'>\n                          <td>{{ movie.Id }}</td>\n                          <td>{{ movie.Title }}</td>\n                          <td>{{ movie.Year }}</td>\n                          <td>{{ movie.Votes }}</td>\n                          <td>{{ movie.Rating }}</td>\n                          <td>{{ movie.Date }}</td>\n                          <td>{{ movie.RestfulAssembly }}</td>\n                        </tr>\n                      </tbody>\n                    </table>\n                  </div>\n                </div>\n              </div>\n            </div>\n            <div id=\"sectionK\" class=\"container tab-pane fade\">\n              <br>\n              <div class=\"row\">\n                <div class=\"col-12\">\n                  Route Path:&ensp;/democontroller/savemovies &ensp;(Restful Service in Local Assembly)&ensp;<button type=\"button\" class=\"btn btn-primary btn-sm\" (click)=\"httpRequest('post', 'http://chromely.com/democontroller/savemovies')\">Run</button>\n                </div>\n                <br><br>\n                <div class=\"col-12\">\n                  <div>{{ postHttpResult }}</div>\n                </div>\n              </div>\n            </div>\n          </div>\n        </div>\n\n        <!-- Modal footer -->\n        <div class=\"modal-footer\">\n          <button type=\"button\" class=\"btn btn-primary\" data-dismiss=\"modal\">Close</button>\n        </div>\n\n      </div>\n    </div>\n  </div>\n\n</div>\n"
+module.exports = "<div>\n  <div class=\"col-12\">\n    <div class=\"centerBlock\">\n      <span class=\"text-primary text-center\"><h2>demo panel</h2></span>\n      <p class=\"text-muted text-center\">demo of chromely angular 2+ integration</p>\n    </div>\n  </div>\n\n  <div class=\"col-12\">\n    <div>\n      <button type=\"button\" class=\"btn btn-link\" (click)=\"goBack()\">Back</button>\n    </div>\n    <div class=\"centerBlock\">\n      <button type=\"button\" class=\"btn btn-light\" data-toggle=\"modal\" data-target=\"#boundJsObjectModal\" style='margin: 5px;'>window.cefQuery Demo</button>\n      <button type=\"button\" class=\"btn btn-light\" data-toggle=\"modal\" data-target=\"#httpModal\" style='margin: 5px;'>Http Demo</button>\n      <a href=\"https://github.com/mattkol/Chromely\" class=\"btn btn-default\" role=\"button\" style='margin: 5px;'>more info</a>\n    </div>\n  </div>\n\n  <br>\n\n  <div id=\"infoPanel\" class=\"col-12 centerBlock\">\n\n    <div>\n      <div class=\"card-header card bg-primary text-white\">Chromely Main objective</div>\n      <div class=\"card-body\"> {{ info.Objective }} </div>\n    </div>\n    <br>\n\n    <div>\n      <div class=\"card-header card bg-primary text-white\">Platforms</div>\n      <div class=\"card-body\"> {{ info.Platform }}</div>\n    </div>\n    <br>\n\n    <div>\n      <div class=\"card-header card bg-primary text-white\">Current CefSharp/Chromium Version</div>\n      <div class=\"card-body\">{{ info.Version }}</div>\n    </div>\n    <br>\n\n  </div>\n\n  <!-- The Modal RegisterAsyncJsObject Modal -->\n  <div class=\"modal fade\" id=\"boundJsObjectModal\">\n    <div class=\"modal-dialog modal-lg\">\n      <div class=\"modal-content\">\n\n        <!-- Modal Header -->\n        <div class=\"modal-header\">\n          <h4 class=\"modal-title\">.NET/JavaScript Integration Demo (window.cefQuery)</h4>\n          <button type=\"button\" class=\"close\" data-dismiss=\"modal\">&times;</button>\n        </div>\n\n        <!-- Modal body -->\n        <div class=\"modal-body\">\n          <!-- Nav pills -->\n          <ul class=\"nav nav-pills\" role=\"tablist\">\n            <li class=\"nav-item\">\n              <a class=\"nav-link active\" data-toggle=\"pill\" href=\"#sectionA\">Get 1</a>\n            </li>\n            <li class=\"nav-item\">\n              <a class=\"nav-link\" data-toggle=\"pill\" href=\"#sectionB\">Get 2</a>\n            </li>\n            <li class=\"nav-item\">\n              <a class=\"nav-link\" data-toggle=\"pill\" href=\"#sectionC\">Post</a>\n            </li>\n          </ul>\n\n          <!-- Tab panes -->\n          <div class=\"tab-content\">\n            <div id=\"sectionA\" class=\"container tab-pane active\">\n              <br>\n              <div class=\"row\">\n                <div class=\"col-12\">\n                  Route Path:&ensp;/demo/movies &ensp; (Restful Service in Local Assembly)&ensp;<button type=\"button\" class=\"btn btn-primary btn-sm\" (click)=\"getMovies()\">Run</button>\n                </div>\n                <br><br>\n                <div class=\"col-12\">\n                  <div class='table-responsive'>\n                    <table class='table'>\n                      <thead>\n                        <tr>\n                          <th>Id</th>\n                          <th>Title</th>\n                          <th>Year</th>\n                          <th>Votes</th>\n                          <th>Rating</th>\n                          <th>Date</th>\n                          <th>RestfulAssembly</th>\n                        </tr>\n                      </thead>\n                      <tbody>\n                        <tr *ngFor='let movie of movies'>\n                          <td>{{ movie.Id }}</td>\n                          <td>{{ movie.Title }}</td>\n                          <td>{{ movie.Year }}</td>\n                          <td>{{ movie.Votes }}</td>\n                          <td>{{ movie.Rating }}</td>\n                          <td>{{ movie.Date }}</td>\n                          <td>{{ movie.RestfulAssembly }}</td>\n                        </tr>\n                      </tbody>\n                    </table>\n                  </div>\n                </div>\n              </div>\n            </div>\n            <div id=\"sectionB\" class=\"container tab-pane fade\">\n              <br>\n              <div class=\"row\">\n                <div class=\"col-12\">\n                  Route Path:&ensp;/external/movies &ensp;(Restful Service in External Assembly)&ensp;<button type=\"button\" class=\"btn btn-primary btn-sm\" (click)=\"getExternalMovies()\">Run</button>\n                </div>\n                <br><br>\n                <div class=\"col-12\">\n                  <div class='table-responsive'>\n                    <table class='table'>\n                      <thead>\n                        <tr>\n                          <th>Id</th>\n                          <th>Title</th>\n                          <th>Year</th>\n                          <th>Votes</th>\n                          <th>Rating</th>\n                          <th>Date</th>\n                          <th>RestfulAssembly</th>\n                        </tr>\n                      </thead>\n                      <tbody>\n                        <tr *ngFor='let movie of externalMovies'>\n                          <td>{{ movie.Id }}</td>\n                          <td>{{ movie.Title }}</td>\n                          <td>{{ movie.Year }}</td>\n                          <td>{{ movie.Votes }}</td>\n                          <td>{{ movie.Rating }}</td>\n                          <td>{{ movie.Date }}</td>\n                          <td>{{ movie.RestfulAssembly }}</td>\n                        </tr>\n                      </tbody>\n                    </table>\n                  </div>\n                </div>\n              </div>\n            </div>\n            <div id=\"sectionC\" class=\"container tab-pane fade\">\n              <br>\n              <div class=\"row\">\n                <div class=\"col-12\">\n                  Route Path:&ensp;/demo/savemovies&ensp;(Restful Service in Local Assembly)&ensp;<button type=\"button\" class=\"btn btn-primary btn-sm\" (click)=\"saveMovies()\">Run</button>\n                </div>\n                <br><br>\n                <div class=\"col-12\">\n                  <div>{{ postResult }}</div>\n                </div>\n              </div>\n            </div>\n          </div>\n        </div>\n\n        <!-- Modal footer -->\n        <div class=\"modal-footer\">\n          <button type=\"button\" class=\"btn btn-primary\" data-dismiss=\"modal\">Close</button>\n        </div>\n\n      </div>\n    </div>\n  </div>\n\n  <!-- The Modal Http Requests -->\n  <div class=\"modal fade\" id=\"httpModal\">\n    <div class=\"modal-dialog modal-lg\">\n      <div class=\"modal-content\">\n\n        <!-- Modal Header -->\n        <div class=\"modal-header\">\n          <h4 class=\"modal-title\">Http Requests</h4>\n          <button type=\"button\" class=\"close\" data-dismiss=\"modal\">&times;</button>\n        </div>\n\n        <!-- Modal body -->\n        <div class=\"modal-body\">\n          <!-- Nav pills -->\n          <ul class=\"nav nav-pills\" role=\"tablist\">\n            <li class=\"nav-item\">\n              <a class=\"nav-link active\" data-toggle=\"pill\" href=\"#sectionI\">Get 1</a>\n            </li>\n            <li class=\"nav-item\">\n              <a class=\"nav-link\" data-toggle=\"pill\" href=\"#sectionJ\">Get 2</a>\n            </li>\n            <li class=\"nav-item\">\n              <a class=\"nav-link\" data-toggle=\"pill\" href=\"#sectionK\">Post</a>\n            </li>\n          </ul>\n\n          <!-- Tab panes -->\n          <div class=\"tab-content\">\n            <div id=\"sectionI\" class=\"container tab-pane active\">\n              <br>\n              <div class=\"row\">\n                <div class=\"col-12\">\n                  Route Path:&ensp;/democontroller/movies &ensp; (Restful Service in Local Assembly&ensp;<button type=\"button\" class=\"btn btn-primary btn-sm\" (click)=\"httpRequest('getlocal', 'http://chromely.com/democontroller/movies')\">Run</button>\n                </div>\n                <br><br>\n                <div class=\"col-12\">\n                  <div class='table-responsive'>\n                    <table class='table'>\n                      <thead>\n                        <tr>\n                          <th>Id</th>\n                          <th>Title</th>\n                          <th>Year</th>\n                          <th>Votes</th>\n                          <th>Rating</th>\n                          <th>Date</th>\n                          <th>RestfulAssembly</th>\n                        </tr>\n                      </thead>\n                      <tbody>\n                        <tr *ngFor='let movie of httpMovies'>\n                          <td>{{ movie.Id }}</td>\n                          <td>{{ movie.Title }}</td>\n                          <td>{{ movie.Year }}</td>\n                          <td>{{ movie.Votes }}</td>\n                          <td>{{ movie.Rating }}</td>\n                          <td>{{ movie.Date }}</td>\n                          <td>{{ movie.RestfulAssembly }}</td>\n                        </tr>\n                      </tbody>\n                    </table>\n                  </div>\n                </div>\n              </div>\n            </div>\n            <div id=\"sectionJ\" class=\"container tab-pane fade\">\n              <br>\n              <div class=\"row\">\n                <div class=\"col-12\">\n                  Route Path:&ensp;/externalcontroller/movies &ensp; (Restful Service in External Assembly)&ensp;<button type=\"button\" class=\"btn btn-primary btn-sm\" (click)=\"httpRequest('getexternal', 'http://chromely.com/externalcontroller/movies')\">Run</button>\n                </div>\n                <br><br>\n                <div class=\"col-12\">\n                  <div class='table-responsive'>\n                    <table class='table'>\n                      <thead>\n                        <tr>\n                          <th>Id</th>\n                          <th>Title</th>\n                          <th>Year</th>\n                          <th>Votes</th>\n                          <th>Rating</th>\n                          <th>Date</th>\n                          <th>RestfulAssembly</th>\n                        </tr>\n                      </thead>\n                      <tbody>\n                        <tr *ngFor='let movie of httpExternalMovies'>\n                          <td>{{ movie.Id }}</td>\n                          <td>{{ movie.Title }}</td>\n                          <td>{{ movie.Year }}</td>\n                          <td>{{ movie.Votes }}</td>\n                          <td>{{ movie.Rating }}</td>\n                          <td>{{ movie.Date }}</td>\n                          <td>{{ movie.RestfulAssembly }}</td>\n                        </tr>\n                      </tbody>\n                    </table>\n                  </div>\n                </div>\n              </div>\n            </div>\n            <div id=\"sectionK\" class=\"container tab-pane fade\">\n              <br>\n              <div class=\"row\">\n                <div class=\"col-12\">\n                  Route Path:&ensp;/democontroller/savemovies &ensp;(Restful Service in Local Assembly)&ensp;<button type=\"button\" class=\"btn btn-primary btn-sm\" (click)=\"httpRequest('post', 'http://chromely.com/democontroller/savemovies')\">Run</button>\n                </div>\n                <br><br>\n                <div class=\"col-12\">\n                  <div>{{ postHttpResult }}</div>\n                </div>\n              </div>\n            </div>\n          </div>\n        </div>\n\n        <!-- Modal footer -->\n        <div class=\"modal-footer\">\n          <button type=\"button\" class=\"btn btn-primary\" data-dismiss=\"modal\">Close</button>\n        </div>\n\n      </div>\n    </div>\n  </div>\n\n</div>\n"
 
 /***/ }),
 
@@ -206,7 +206,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
 /* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/common */ "./node_modules/@angular/common/fesm5/common.js");
 /* harmony import */ var _services_http_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../services/http.service */ "./src/app/services/http.service.ts");
-/* harmony import */ var _services_registered_js_object_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../services/registered-js-object.service */ "./src/app/services/registered-js-object.service.ts");
+/* harmony import */ var _services_chromely_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../services/chromely.service */ "./src/app/services/chromely.service.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -221,8 +221,8 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 
 
 var DemoComponent = /** @class */ (function () {
-    function DemoComponent(_registeredJsObjectService, _httpService, _zone, _location) {
-        this._registeredJsObjectService = _registeredJsObjectService;
+    function DemoComponent(_chromelyService, _httpService, _zone, _location) {
+        this._chromelyService = _chromelyService;
         this._httpService = _httpService;
         this._zone = _zone;
         this._location = _location;
@@ -240,7 +240,7 @@ var DemoComponent = /** @class */ (function () {
     };
     DemoComponent.prototype.getInfo = function () {
         var _this = this;
-        this._registeredJsObjectService.get('/info', null).subscribe(function (data) {
+        this._chromelyService.get('/info', null).subscribe(function (data) {
             _this._zone.run(function () {
                 _this.info = data;
             });
@@ -248,7 +248,7 @@ var DemoComponent = /** @class */ (function () {
     };
     DemoComponent.prototype.getMovies = function () {
         var _this = this;
-        this._registeredJsObjectService.get('/demo/getmovies', null).subscribe(function (data) {
+        this._chromelyService.get('/demo/getmovies', null).subscribe(function (data) {
             _this._zone.run(function () {
                 _this.movies = data;
             });
@@ -256,7 +256,7 @@ var DemoComponent = /** @class */ (function () {
     };
     DemoComponent.prototype.saveMovies = function () {
         var _this = this;
-        this._registeredJsObjectService.post('/demo/savemovies', null, this.postData).subscribe(function (data) {
+        this._chromelyService.post('/demo/savemovies', null, this.postData).subscribe(function (data) {
             _this._zone.run(function () {
                 _this.postResult = data;
             });
@@ -377,7 +377,7 @@ var DemoComponent = /** @class */ (function () {
             template: __webpack_require__(/*! ./demo.component.html */ "./src/app/demo/demo.component.html"),
             styles: [__webpack_require__(/*! ./demo.component.css */ "./src/app/demo/demo.component.css")]
         }),
-        __metadata("design:paramtypes", [_services_registered_js_object_service__WEBPACK_IMPORTED_MODULE_3__["RegisteredJsObjectService"],
+        __metadata("design:paramtypes", [_services_chromely_service__WEBPACK_IMPORTED_MODULE_3__["ChromelyService"],
             _services_http_service__WEBPACK_IMPORTED_MODULE_2__["HttpService"],
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["NgZone"],
             _angular_common__WEBPACK_IMPORTED_MODULE_1__["Location"]])
@@ -407,7 +407,7 @@ module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div>\n  <div class=\"col-12\">\n    <div class=\"centerBlock\">\n      <div class=\"row\">\n        <div class=\"col\">\n          <img src=\"assets/img/chromely.png\" class=\"img-rounded\" alt=\"Chromely Logo\" width=\"200\" height=\"200\" style='margin-top: 20px;' />\n        </div>\n        <div class=\"col\">\n          <img width=\"240\" height=\"240\" alt=\"Angular Logo\" src=\"data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg==\" />\n        </div>\n      </div>\n\n      <span class=\"text-primary text-center\"><h2>chromely + angular</h2></span>\n      <p class=\"text-muted text-center\">Build .NET/.NET CORE HTML5 Desktop Apps</p>\n    </div>\n  </div>\n\n  <div class=\"col-12\" style='padding:20px;'>\n    <div id=\"runButton\" class=\"centerBlock\">\n      <form class=\"form-inline\">\n        <div class=\"form-group\">\n          <label for=\"info\">RegisterAsyncJsObject/Http Demos:</label>\n        </div>\n        <button id=\"buttonDemoRun\" type=\"button\" class=\"btn btn-primary\" (click)=\"showDemo()\" style='margin: 5px;'>Run</button>\n      </form>\n    </div>\n  </div>\n\n</div>\n"
+module.exports = "<div>\n  <div class=\"col-12\">\n    <div class=\"centerBlock\">\n      <div class=\"row\">\n        <div class=\"col\">\n          <img src=\"assets/img/chromely.png\" class=\"img-rounded\" alt=\"Chromely Logo\" width=\"200\" height=\"200\" style='margin-top: 20px;' />\n        </div>\n        <div class=\"col\">\n          <img width=\"240\" height=\"240\" alt=\"Angular Logo\" src=\"data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg==\" />\n        </div>\n      </div>\n\n      <span class=\"text-primary text-center\"><h2>chromely + mvc + angular</h2></span>\n      <p class=\"text-muted text-center\">Build .NET/.NET CORE HTML5 Desktop Apps</p>\n    </div>\n  </div>\n\n  <div class=\"col-12\" style='padding:20px;'>\n    <div id=\"runButton\" class=\"centerBlock\">\n      <form class=\"form-inline\">\n        <div class=\"form-group\">\n          <label for=\"info\">window.cefQuery/Http Demos:</label>\n        </div>\n        <button id=\"buttonDemoRun\" type=\"button\" class=\"btn btn-primary\" (click)=\"showDemo()\" style='margin: 5px;'>Run</button>\n      </form>\n    </div>\n  </div>\n\n</div>\n"
 
 /***/ }),
 
@@ -451,6 +451,79 @@ var HomeComponent = /** @class */ (function () {
         __metadata("design:paramtypes", [_angular_router__WEBPACK_IMPORTED_MODULE_1__["Router"], _angular_router__WEBPACK_IMPORTED_MODULE_1__["ActivatedRoute"]])
     ], HomeComponent);
     return HomeComponent;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/services/chromely.service.ts":
+/*!**********************************************!*\
+  !*** ./src/app/services/chromely.service.ts ***!
+  \**********************************************/
+/*! exports provided: ChromelyService */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ChromelyService", function() { return ChromelyService; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! rxjs */ "./node_modules/rxjs/_esm5/index.js");
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+
+
+var ChromelyService = /** @class */ (function () {
+    function ChromelyService() {
+    }
+    ChromelyService.prototype.get = function (url, parameters) {
+        var request = {
+            "method": "GET",
+            "url": url,
+            "parameters": parameters,
+            "postData": null
+        };
+        return this.messageRouterQuery(request);
+    };
+    ChromelyService.prototype.post = function (url, parameters, postData) {
+        var request = {
+            "method": "POST",
+            "url": url,
+            "parameters": parameters,
+            "postData": postData
+        };
+        return this.messageRouterQuery(request);
+    };
+    ChromelyService.prototype.messageRouterQuery = function (request) {
+        var subject = new rxjs__WEBPACK_IMPORTED_MODULE_1__["Subject"]();
+        // window.cefQuery is injected by Chromely/Cef.
+        window.cefQuery({
+            request: JSON.stringify(request),
+            onSuccess: function (response) {
+                var jsonData = JSON.parse(response);
+                if (jsonData.ReadyState === 4 && jsonData.Status === 200) {
+                    subject.next(jsonData.Data);
+                }
+                else {
+                    subject.error(jsonData);
+                    console.log("Error:" + jsonData);
+                }
+            },
+            onFailure: function (err, msg) {
+                subject.error({ err: err, msg: msg });
+                console.log(err, msg);
+            }
+        });
+        return subject;
+    };
+    ChromelyService = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Injectable"])()
+    ], ChromelyService);
+    return ChromelyService;
 }());
 
 
@@ -536,69 +609,6 @@ var HttpService = /** @class */ (function () {
 
 /***/ }),
 
-/***/ "./src/app/services/registered-js-object.service.ts":
-/*!**********************************************************!*\
-  !*** ./src/app/services/registered-js-object.service.ts ***!
-  \**********************************************************/
-/*! exports provided: RegisteredJsObjectService */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "RegisteredJsObjectService", function() { return RegisteredJsObjectService; });
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! rxjs */ "./node_modules/rxjs/_esm5/index.js");
-var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-
-
-var RegisteredJsObjectService = /** @class */ (function () {
-    function RegisteredJsObjectService() {
-    }
-    RegisteredJsObjectService.prototype.get = function (url, parameters) {
-        var subject = new rxjs__WEBPACK_IMPORTED_MODULE_1__["Subject"]();
-        boundControllerAsync.getJson(url, parameters, function (response) {
-            if (typeof response === 'string') {
-                response = JSON.parse(response);
-            }
-            if (response.ReadyState === 4 && response.Status === 200) {
-                subject.next(response.Data);
-            }
-            else {
-                subject.error(response);
-            }
-        });
-        return subject;
-    };
-    RegisteredJsObjectService.prototype.post = function (url, parameters, postData) {
-        var subject = new rxjs__WEBPACK_IMPORTED_MODULE_1__["Subject"]();
-        boundControllerAsync.postJson(url, parameters, postData, function (response) {
-            if (typeof response === 'string') {
-                response = JSON.parse(response);
-            }
-            if (response.ReadyState === 4 && response.Status === 200) {
-                subject.next(response.Data);
-            }
-            else {
-                subject.error(response);
-            }
-        });
-        return subject;
-    };
-    RegisteredJsObjectService = __decorate([
-        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Injectable"])()
-    ], RegisteredJsObjectService);
-    return RegisteredJsObjectService;
-}());
-
-
-
-/***/ }),
-
 /***/ "./src/environments/environment.ts":
 /*!*****************************************!*\
   !*** ./src/environments/environment.ts ***!
@@ -653,7 +663,7 @@ Object(_angular_platform_browser_dynamic__WEBPACK_IMPORTED_MODULE_1__["platformB
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\GitProjects\Chromely.Mvc.Demos\ChromelyMvcAngularDemo\angularapp\src\main.ts */"./src/main.ts");
+module.exports = __webpack_require__(/*! C:\Play\Chromely.Mvc.Demos\ChromelyMvcAngularDemo\angularapp\src\main.ts */"./src/main.ts");
 
 
 /***/ })

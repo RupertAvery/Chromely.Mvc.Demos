@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace ChromelyVueCefSharp.Services
+namespace ChromelyMvcVueDemo.Services
 {
     public interface IMovieService
     {

@@ -20,7 +20,7 @@
     <div id="runButton" class="centerBlock">
       <form class="form-inline">
         <div class="form-group">
-          <label for="info">RegisterAsyncJsObject/Http Demos:</label>
+            <label for="info">window.cefQuery/Http Demos:</label>
         </div>
         <router-link to="/demo"> <button id="buttonDemoRun" type="button" class="btn btn-primary" style='margin: 5px;'>Run</button></router-link>
       </form>

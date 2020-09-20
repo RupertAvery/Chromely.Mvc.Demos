@@ -1,4 +1,4 @@
-﻿var boundObjectService = require('./services/registered-js-object.service');
+﻿var chromelyService = require('./services/chromely.service');
 
 export default {
     data() {
@@ -14,14 +14,14 @@ export default {
         /* Start -  Event Handling */
 
         boundObjectGet1Click: function () {
-            boundObjectService.get('/demo/getmovies', null)
+            chromelyService.get('/demo/getmovies', null)
                 .then((res) => {
                     this.boundObjectGet1Result = res;
                 });
         },
 
         boundObjectGet2Click: function () {
-            boundObjectService.get('/external/getmovies', null)
+            chromelyService.get('/external/getmovies', null)
                 .then((res) => {
                     this.boundObjectGet2Result = res;
                 });
@@ -29,15 +29,15 @@ export default {
 
         boundObjectPostClick: function () {
             var moviesJson = [
-                { Id: 1, Title: "The Shawshank Redemption", Year: 1994, Votes: 678790, Rating: 9.2 },
-                { Id: 2, Title: "The Godfather", Year: 1972, votes: 511495, Rating: 9.2 },
-                { Id: 3, Title: "The Godfather: Part II", Year: 1974, Votes: 319352, Rating: 9.0 },
-                { Id: 4, Title: "The Good, the Bad and the Ugly", Year: 1966, Votes: 213030, Rating: 8.9 },
-                { Id: 5, Title: "My Fair Lady", Year: 1964, Votes: 533848, Rating: 8.9 },
-                { Id: 6, Title: "12 Angry Men", Year: 1957, Votes: 164558, Rating: 8.9 }
+                { id: 1, title: "The Shawshank Redemption", year: 1994, votes: 678790, rating: 9.2 },
+                { id: 2, title: "The Godfather", year: 1972, votes: 511495, rating: 9.2 },
+                { id: 3, title: "The Godfather: Part II", year: 1974, votes: 319352, rating: 9.0 },
+                { id: 4, title: "The Good, the Bad and the Ugly", year: 1966, votes: 213030, rating: 8.9 },
+                { id: 5, title: "My Fair Lady", year: 1964, votes: 533848, rating: 8.9 },
+                { id: 6, title: "12 Angry Men", year: 1957, votes: 164558, rating: 8.9 }
             ];
 
-            boundObjectService.post('/demo/savemovies', null, moviesJson).then((res) => {
+            chromelyService.post('/demo/savemovies', null, moviesJson).then((res) => {
                 this.boundObjectPostResult = res;
             });
         },
@@ -45,7 +45,7 @@ export default {
         /* End - Event Handling */
     },
     beforeMount() {
-        boundObjectService.get('/info', null).then((res) => {
+        chromelyService.get('/info', null).then((res) => {
             this.info = res;
         });
     }

@@ -1,14 +1,19 @@
 ﻿using System;
-using CefSharp;
+using Chromely.Core;
 
-namespace ChromelyVueCefSharp.Services
+//using CefSharp;
+
+namespace ChromelyMvcVueDemo.Services
 {
     public class InfoService : IInfoService
     {
         public Info GetInfo()
         {
+            var cef = ChromelyRuntime.GetExpectedCefBuild();
+
             var bitness = Environment.Is64BitProcess ? "x64" : "x86";
-            var chromeVersion = $"Chromium: {Cef.ChromiumVersion}, CEF: {Cef.CefVersion}, CefSharp: {Cef.CefSharpVersion}, Environment: {bitness}";
+            var chromeVersion = $"Chromium: {cef.ChromiumVersion}, CEF: {cef.CefVersion}, Environment: {bitness}";
+
 
             return new Info
             {

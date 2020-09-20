@@ -1,4 +1,4 @@
-﻿namespace ChromelyVueCefSharp.Services
+﻿namespace ChromelyMvcVueDemo.Services
 {
     public class Info
     {

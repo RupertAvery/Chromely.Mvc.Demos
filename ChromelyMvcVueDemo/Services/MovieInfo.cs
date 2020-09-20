@@ -1,5 +1,6 @@
 ﻿using System;
-namespace ChromelyVueCefSharp.Services
+
+namespace ChromelyMvcVueDemo.Services
 {
 
     public class MovieInfo
